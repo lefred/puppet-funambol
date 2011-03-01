@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.4.2" class="java.beans.XMLDecoder">
+    <object class="com.funambol.oxlistener.service.OXListenerScheduledTask">
+        <void property="sifDevicesRegExp">
+            <!-- Regular expression to detect the devices that use SIF format       -->
+            <string>fwm-[\p{ASCII}]*</string>
+        </void>
+        <void property="excludedDevicesRegExp">
+            <!-- Regular expression to detect the devices that must not be notified -->
+            <string>sc-pim-[\p{ASCII}]*|fol-[\p{ASCII}]*|fmz-[\p{ASCII}]*|fbb-[\p{ASCII}]*|fjg-[\p{ASCII}]*|fip-[\p{ASCII}]*</string>
+        </void>
+
+        <void property="syncSourceSIFContact">
+            <!-- syncsource name for contacts in SIF format -->
+            <string>oxscard</string>
+        </void>
+        <void property="syncSourceSIFEvent">
+            <!-- syncsource name for events in SIF format -->
+            <string>oxscal</string>
+        </void>
+        <void property="syncSourceSIFTask">
+            <!-- syncsource name for tasks in SIF format -->
+            <string>oxstask</string>
+        </void>
+        <void property="syncSourceContact">
+            <!-- syncsource name for contacts in vcard format -->
+            <string>oxcard</string>
+        </void>
+        <void property="syncSourceCalendar">
+            <!-- syncsource name for calendar in vcal format -->
+            <string>oxcal</string>
+        </void>
+        <void property="syncSourceEvent">
+            <!-- syncsource name for events in vcal format -->
+            <string>oxevent</string>
+        </void>
+        <void property="syncSourceTask">
+            <!-- syncsource name for tasks in vcal format -->
+            <string>oxtask</string>
+        </void>
+
+        <!-- account registry table -->
+        <void property="pushRegistryTableName">
+          <string>fnbl_ox_push_registry</string>
+        </void>
+
+        <void property="OXUrl">
+            <string>http://localhost:80</string>
+        </void>
+
+        <!-- debug mode  -->
+        <void property="isDebugMode">
+          <boolean>false</boolean>
+        </void>
+
+    </object>
+</java>
