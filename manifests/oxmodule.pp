@@ -19,8 +19,8 @@ class funambol::oxmodule {
     file { "/opt/Funambol/config/com/funambol/oxlistener/task/OXListenerTask.xml":
         ensure  => present,
         source  => [
-            "puppet:///funambol/${hostname}/OXListernerTask.xml",
-            "puppet:///funambol/default/OXListernerTask.xml",
+            "puppet:///funambol/${hostname}/OXListenerTask.xml",
+            "puppet:///funambol/default/OXListenerTask.xml",
             ],
         require => Package["funambol-ox-module"];
     }
