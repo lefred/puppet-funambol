@@ -22,4 +22,22 @@ class funambol {
         hasstatus  => true,
         require => Package["funambol"]
     }
+
+    file { "/opt/Funambol/ds-server/install.properties":
+        ensure  => present,
+        mode    => 0754,
+        owner   => "root",
+        group   => "root",
+        source  => [
+                    "puppet:///modules/funambol/$hostname/install.properties",
+                    "puppet:///modules/funambol/default/install.properties",
+                   ],
+        require => Package["funambol"];
+    }
+
+    package { "mysql-connector-java":
+        ensure => "installed"
+    }
+
+
 }
