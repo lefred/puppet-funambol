@@ -39,5 +39,22 @@ class funambol {
         ensure => "installed"
     }
 
+    define grant( $user, $password, $db, $host, $permission ) {
+
+        exec { "add-${name}":
+            unless => "/usr/bin/mysql -u${user} -p${password}",
+            command => "/usr/bin/mysql -uroot -e \"grant ${permission} on ${db}.* to ${user}@'$host' identified by '$password';\"",
+            require => Service["mysqld"],
+        }
+    }
+
+    grant {
+        "funambol":
+            user => "funambol",
+            password => "funambol",
+            host => "%",
+            db => "funambol",
+            permission => "all",
+    }
 
 }
